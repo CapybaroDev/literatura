@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movimentos Literários | Simbolismo e Parnasianismo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --background: #10131c;
+    --surface: #191e2a;
+    --surface-light: #222938;
+    --text: #f1eee9;
+    --muted: #a9adba;
+    --symbol: #b9a1dc;
+    --parnassian: #d8b77a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(16, 19, 28, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ffffff12;
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--text);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    background: radial-gradient(ellipse at top, #37304c 0%, #10131c 65%);
+}
+
+.hero span {
+    color: var(--symbol);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 7vw, 76px);
+    max-width: 850px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 15px;
+}
+
+.hero a {
+    margin-top: 35px;
+    padding: 13px 30px;
+    border: 1px solid var(--symbol);
+    border-radius: 30px;
+    color: var(--text);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.hero a:hover {
+    background: var(--symbol);
+    color: #10131c;
+}
+
+section {
+    padding: 100px 25px;
+    scroll-margin-top: 65px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    color: var(--symbol);
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 5vw, 48px);
+    margin-bottom: 25px;
+}
+
+.intro {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.symbolism {
+    background: linear-gradient(180deg, #171522, #10131c);
+}
+
+.parnassian {
+    background: linear-gradient(180deg, #211e1a, #10131c);
+}
+
+.parnassian .section-label {
+    color: var(--parnassian);
+}
+
+.characteristics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.characteristic {
+    background: var(--surface);
+    border: 1px solid #ffffff10;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.characteristic h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.characteristic p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.authors {
+    margin-top: 65px;
+}
+
+.author {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #ffffff18;
+}
+
+.author:nth-child(even) .author-info {
+    order: 2;
+}
+
+.author h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.author-info p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.works {
+    margin-top: 20px;
+}
+
+.works h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.works ul {
+    list-style: none;
+}
+
+.works li {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.works li::before {
+    content: "✦ ";
+    color: var(--symbol);
+}
+
+.parnassian .works li::before {
+    color: var(--parnassian);
+}
+
+.quote {
+    background: var(--surface);
+    border: 1px solid #ffffff15;
+    border-radius: 15px;
+    padding: 35px;
+}
+
+.quote span {
+    display: block;
+    color: var(--symbol);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.parnassian .quote span {
+    color: var(--parnassian);
+}
+
+.quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 2;
+    font-style: italic;
+}
+
+.quote p {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #0b0d13;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .author {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .author:nth-child(even) .author-info {
+        order: initial;
+    }
+
+    section {
+        padding: 75px 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Literatura.</div>
+        <ul>
+            <li><a href="#simbolismo">Simbolismo</a></li>
+            <li><a href="#parnasianismo">Parnasianismo</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="symbolism" id="simbolismo">
+    <div class="container">
+        <div class="section-label">Movimento literário • 1893</div>
+        <h2>Simbolismo</h2>
+
+        <p class="intro">
+            O Simbolismo foi um movimento literário que surgiu na França, no final do século XIX, e chegou ao Brasil em 1893, com a publicação de Missal e Broquéis, de Cruz e Sousa. Seus escritores valorizavam os sentimentos, a espiritualidade, os mistérios e a subjetividade, utilizando símbolos e linguagem musical para expressar emoções e ideias.
+        </p>
+
+        <div class="characteristics">
+            <div class="characteristic">
+                <h3>Subjetividade</h3>
+                <p>Valorização dos sentimentos, emoções e experiências individuais.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Misticismo</h3>
+                <p>Presença da espiritualidade, religiosidade e temas relacionados ao sobrenatural.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Musicalidade</h3>
+                <p>Uso de sons, ritmos, aliterações e repetições para criar efeitos poéticos.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Sinestesia</h3>
+                <p>Combinação de diferentes sensações, como sons, cores, cheiros e sentimentos.</p>
+            </div>
+        </div>
+
+        <div class="authors">
+
+            <article class="author">
+                <div class="author-info">
+                    <h3>Cruz e Sousa</h3>
+                    <p>
+                        João da Cruz e Sousa (1861–1898) foi um dos principais representantes do Simbolismo brasileiro. Sua poesia é marcada pela musicalidade, pelo misticismo e pela busca espiritual. Também abordava o sofrimento humano e utilizava frequentemente imagens relacionadas à cor branca, à luz e à transcendência.
+                    </p>
+
+                    <div class="works">
+                        <h4>Principais obras</h4>
+                        <ul>
+                            <li>Broquéis (1893)</li>
+                            <li>Missal (1893)</li>
+                            <li>Últimos Sonetos (1905)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    <span>Trecho literário • Antífona</span>
+                    <blockquote>
+                        Ó Formas alvas, brancas, Formas claras,<br>
+                        De luares, de neves, de neblinas!<br>
+                        Ó Formas vagas, fluidas, cristalinas...<br>
+                        Incensos dos turíbulos das aras...
+                    </blockquote>
+                    <p>O trecho demonstra a musicalidade, o uso de imagens simbólicas e a valorização da cor branca.</p>
+                </div>
+            </article>
+
+            <article class="author">
+                <div class="author-info">
+                    <h3>Alphonsus de Guimaraens</h3>
+                    <p>
+                        Afonso Henrique da Costa Guimarães (1870–1921), conhecido como Alphonsus de Guimaraens, foi um importante poeta simbolista brasileiro. Sua obra apresenta forte influência religiosa e mística, abordando principalmente a morte, a saudade, o amor idealizado e a espiritualidade.
+                    </p>
+
+                    <div class="works">
+                        <h4>Principais obras</h4>
+                        <ul>
+                            <li>Setenário das Dores de Nossa Senhora (1899)</li>
+                            <li>Dona Mística (1899)</li>
+                            <li>Kyriale (1902)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    <span>Trecho literário • Ismália</span>
+                    <blockquote>
+                        Quando Ismália enlouqueceu,<br>
+                        Pôs-se na torre a sonhar...<br>
+                        Viu uma lua no céu,<br>
+                        Viu outra lua no mar...
+                    </blockquote>
+                    <p>O trecho apresenta simbolismo, musicalidade e imagens que representam o conflito entre o mundo real e o imaginário.</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="parnassian" id="parnasianismo">
+    <div class="container">
+        <div class="section-label">Movimento literário • Final do século XIX</div>
+        <h2>Parnasianismo</h2>
+
+        <p class="intro">
+            O Parnasianismo foi um movimento literário que valorizava a perfeição formal e a beleza estética da poesia. Surgiu na França e desenvolveu-se no Brasil a partir da década de 1880. Diferentemente do Romantismo, buscava maior objetividade, rigor na construção dos versos e atenção especial à escolha das palavras, seguindo o ideal da "arte pela arte".
+        </p>
+
+        <div class="characteristics">
+            <div class="characteristic">
+                <h3>Objetividade</h3>
+                <p>Busca por uma escrita mais descritiva e menos sentimental.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Rigor formal</h3>
+                <p>Preocupação com a métrica, as rimas e a estrutura dos poemas.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Arte pela arte</h3>
+                <p>Valorização da beleza artística independentemente de sua utilidade.</p>
+            </div>
+            <div class="characteristic">
+                <h3>Vocabulário elaborado</h3>
+                <p>Uso de palavras precisas, linguagem culta e descrições detalhadas.</p>
+            </div>
+        </div>
+
+        <div class="authors">
+            <article class="author">
+                <div class="author-info">
+                    <h3>Olavo Bilac</h3>
+                    <p>
+                        Olavo Bilac (1865–1918) foi um dos principais representantes do Parnasianismo brasileiro. Conhecido pelo domínio da linguagem e pela perfeição formal de seus poemas, valorizava a construção cuidadosa dos versos, as rimas e a riqueza do vocabulário. Também escreveu sobre temas patrióticos, amorosos e históricos.
+                    </p>
+
+                    <div class="works">
+                        <h4>Principais obras</h4>
+                        <ul>
+                            <li>Poesias (1888)</li>
+                            <li>Via Láctea (1888)</li>
+                            <li>Tarde (1919)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    <span>Trecho literário • A um poeta</span>
+                    <blockquote>
+                        Longe do estéril turbilhão da rua,<br>
+                        Beneditino, escreve! No aconchego<br>
+                        Do claustro, na paciência e no sossego,<br>
+                        Trabalha, e teima, e lima, e sofre, e sua!
+                    </blockquote>
+                    <p>O trecho demonstra o rigor na construção poética e a ideia de que o poema exige dedicação e aperfeiçoamento.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>Trabalho de Literatura Brasileira • Simbolismo e Parnasianismo</p>
+    <p>Estudo dos movimentos literários e seus principais representantes.</p>
+</footer>
+
+</body>
+</html>
